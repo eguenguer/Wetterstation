@@ -62,7 +62,7 @@ uint8_t ledColor[3] = {0, 0, 255}; // Standardfarbe: Blau
 WebServer server(80);
 
 WiFiUDP ntpUDP;
-NTPClient timeClient(ntpUDP, "pool.ntp.org", 3600, 60000); // UTC+1
+NTPClient timeClient(ntpUDP, "pool.ntp.org", 3600, 60000); 
 
 struct Messung {
   float temp;
