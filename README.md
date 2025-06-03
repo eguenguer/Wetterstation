@@ -4,33 +4,63 @@
 **Datum:** 27.05.2025
 
 
-## 1.Einführung
-Es wurde ein Mikrocontroller-Projekt umgesetzt, bei dem eine einfache Wetterstation mit Sensoren gebaut wurde. Ziel war es, Temperatur und Luftfeuchtigkeit zu messen und diese über ein Webinterface darzustellen. Zusätzlich konnten Farben der Status-LED über das Webinterface verändert und gespeichert werden.
+## 1. Einführung
+In diesem Projekt wurde mit dem ESP32-C3 eine Wetterstation aufgebaut, die Temperatur und Luftfeuchtigkeit misst. Die Messwerte werden über ein Webinterface angezeigt. Zusätzlich zeigt die interne RGB-LED des Mikrocontrollers den aktuellen Status (z. B. WLAN-Verbindung, Messung aktiv, Überhitzung) durch verschiedene Farben an. Die Farben können im Webinterface per Colorpicker angepasst und dauerhaft gespeichert werden.
 
-## 2.Projeltbeschreibung
-Mit Hilfe eines ESP32 Mikrocontrollers wurde eine Wetterstation gebaut. Sie misst Temperatur und Luftfeuchtigkeit mit einem DHT11 Sensor und zeigt die Daten über eine Webseite an. Besonderheit: Die Status-LED kann mit einem grafischen Colorpicker im Webinterface gesteuert werden. Die ausgewählten Farben bleiben auch nach einem Neustart erhalten.
+## 2. Projektbeschreibung
+Das Herzstück der Wetterstation ist der ESP32-C3 Mikrocontroller. Über den DHT11-Sensor werden regelmäßig Temperatur und Luftfeuchtigkeit gemessen.
+Ein einfacher Webserver läuft direkt auf dem ESP32. Die Webseite zeigt die aktuellen Messwerte und bietet einen Colorpicker zur Auswahl der Status-LED-Farbe. Die Farbe bleibt nach einem Neustart erhalten, da sie im EEPROM gespeichert wird.
 
-## 3.Theorie
-In diesem Projekt wurde ein ESP32 Mikrocontroller eingesetzt. Dieses kleine Gerät kann Daten verarbeiten und sich mit dem WLAN verbinden. Dadurch ist es möglich, Informationen wie Temperatur oder Farben über eine Webseite anzuzeigen oder zu ändern.
+Ein Lüfter wird automatisch über ein Relais eingeschaltet, wenn die Temperatur einen definierten Grenzwert überschreitet. So kann bei zu hoher Temperatur für Abkühlung gesorgt werden.
+## 3. Theorie
+ESP32-C3
+Ein Mikrocontroller mit integriertem WLAN. Er ist leistungsstark und ideal für IoT-Projekte. Er kann Webserver hosten, Sensoren verarbeiten und Ausgaben steuern.
 
-Der Sensor, der verwendet wurde, heißt DHT11. Er misst Temperatur und Luftfeuchtigkeit. Diese Werte werden vom Mikrocontroller regelmäßig ausgelesen und weitergegeben. Der DHT11 ist sehr beliebt, weil er einfach zu benutzen ist und für viele kleine Projekte ausreicht.
+DHT11
+Ein einfacher digitaler Sensor, der Temperatur und Luftfeuchtigkeit misst. Er gibt die Werte seriell weiter und eignet sich gut für Einsteigerprojekte.
 
-Damit die Wetterstation auch Farben anzeigen kann, wurde eine RGB-LED eingebaut. Diese LED kann verschiedene Farben leuchten, je nachdem, wie stark jeder der drei Farbkanäle (Rot, Grün, Blau) angesteuert wird. Die Farbe kann man über eine Webseite auswählen – ein sogenannter „Colorpicker“ macht das einfach möglich.
+Interne RGB-LED
+Der ESP32-C3 besitzt eine eingebaute RGB-LED. Diese zeigt den aktuellen Status der Wetterstation an:
 
-Damit die gewählte Farbe auch nach einem Neustart erhalten bleibt, speichert der ESP32 sie im internen Speicher (EEPROM). Der Code dafür wurde mit der Arduino IDE geschrieben, einer Umgebung, die speziell für Mikrocontroller-Projekte gedacht ist.
+Rot: Kein WLAN
 
-## 4.Arbeitsschritte
-Zuerst haben wir den ESP32 richtig mit dem Computer verbunden und die Arduino IDE eingerichtet. Dafür mussten wir die passenden Treiber und das Board installieren.
+Blau: Messung läuft
 
-Danach haben wir den DHT11-Sensor angeschlossen. Wir haben getestet, ob er richtig funktioniert und ob er Temperatur und Luftfeuchtigkeit anzeigen kann.
+Orange: Zu hohe Temperatur
+Diese Farben können auch im Webinterface angepasst und gespeichert werden.
 
-Als Nächstes haben wir den RGB-LED-Streifen angeschlossen. Wir haben ausprobiert, ob die Farben richtig leuchten und ob sich jede Farbe einzeln steuern lässt.
+Relais
+Ein elektrischer Schalter, mit dem der ESP32 einen externen Verbraucher (wie den Lüfter) steuern kann.
 
-Dann haben wir einen einfachen Webserver auf dem ESP32 eingerichtet. Dieser zeigt eine Webseite mit einem Colorpicker an, mit dem man die LED-Farbe auswählen kann.
+Lüfter
+Der Lüfter wird über das Relais aktiviert, sobald eine festgelegte Temperatur überschritten wird (z. B. 28 °C). So wird die Temperatur automatisch gesenkt.
 
-Nachdem das funktioniert hat, haben wir den Code erweitert, damit die ausgewählte Farbe im Speicher (EEPROM) gespeichert wird. So bleibt die Farbe auch nach einem Neustart erhalten.
+Webinterface & Colorpicker
+Der Mikrocontroller hostet eine Webseite, auf der aktuelle Daten sichtbar sind. Ein grafischer Colorpicker erlaubt es, die Farbe der Status-LED frei zu wählen. Diese Einstellung wird im EEPROM gespeichert und bleibt auch nach einem Neustart erhalten.
 
-Am Ende haben wir alles getestet und kleinere Fehler verbessert.
+## 4. Arbeitsschritte
+ESP32 eingerichtet
+Zuerst wurde der ESP32-C3 über USB verbunden. In der Arduino IDE wurden die Board-Treiber und die Bibliotheken installiert.
+
+Sensor verbunden
+Der DHT11 wurde mit dem ESP32 verbunden. Der Code liest regelmäßig Temperatur- und Luftfeuchtigkeit aus und filtert unplausible Werte.
+
+Relais & Lüfter angeschlossen
+Ein Relaismodul wurde so eingebunden, dass es den Lüfter bei Bedarf einschalten kann. Der Grenzwert (z. B. 28 °C) wurde im Code festgelegt.
+
+Status-LED programmiert
+Die interne RGB-LED des ESP32 zeigt den Status an. Zusätzlich kann ihre Farbe über die Webseite angepasst werden.
+
+Webserver aufgebaut
+Eine einfache Webseite wurde erstellt. Diese zeigt Temperatur, Luftfeuchtigkeit und einen Colorpicker zur Steuerung der LED-Farbe.
+
+Farbwahl gespeichert
+Die gewählte Farbe der LED wird im EEPROM gespeichert, damit sie nach einem Neustart erhalten bleibt.
+
+Tests durchgeführt
+Die Wetterstation wurde getestet. Temperaturerfassung, Lüftersteuerung, LED-Anzeige und Webseite funktionieren wie geplant.
+
+
 
 ## 5.Code
 ```c++
