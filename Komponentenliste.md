@@ -8,4 +8,4 @@
 | 4   | Relay                  | Schaltet den Lüfter (wie ein elektronischer Schalter)                     |
 | 5   | Breadboard             | Zum Aufbau der Schaltung                                                  |
 | 6   | Jumper Kabel           | Für die Verbindung aller Komponenten auf dem Breadboard                   |
-| 7   | USB-C Kabel            | Dient zur Stromversorgung und zum Hochladen des Codes auf den ESP32       |
+| 7   | USB-A Kabel            | Dient zur Stromversorgung und zum Hochladen des Codes auf den ESP32       |
