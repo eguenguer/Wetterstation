@@ -396,12 +396,38 @@ void loop() {
 }
 ```
 
-### Tabelle
+## Bilder
 
-| Zeitpunkt  | Temperatur (°C) | Luftfeuchtigkeit (%) | Lüfter an? | LED-Farbe (Hex) |
-|------------|------------------|------------------------|-------------|------------------|
-| 12:00 Uhr  | 24.5             | 60                     | Nein        | #00FF00 (Grün)   |
-| 12:05 Uhr  | 25.3             | 58                     | Nein        | #00FF00 (Grün)   |
-| 12:10 Uhr  | 27.8             | 55                     | Ja          | #FF0000 (Rot)    |
-| 12:15 Uhr  | 26.0             | 57                     | Nein        | #0000FF (Blau)   |
 
+
+## Tabelle
+
+| Nr. | Komponente             | Beschreibung                                                              |
+|-----|------------------------|---------------------------------------------------------------------------|
+| 1   | ESP32-C3 Dev Board     | Mikrocontroller mit WLAN – steuert Sensor, Lüfter und Webinterface        |
+| 2   | DHT11 Sensor           | Misst Temperatur und Luftfeuchtigkeit                                     |
+| 3   | 5V Mini-Lüfter         | Wird bei Bedarf automatisch vom ESP eingeschaltet                         |
+| 4   | Relay                  | Schaltet den Lüfter (wie ein elektronischer Schalter)                     |
+| 5   | Breadboard             | Zum Aufbau der Schaltung                                                  |
+| 6   | Jumper Kabel           | Für die Verbindung aller Komponenten auf dem Breadboard                   |
+| 7   | USB-C Kabel            | Dient zur Stromversorgung und zum Hochladen des Codes auf den ESP32       |
+
+
+## 5. Zusammenfassung
+
+Bei diesem Projekt wurde eine einfache Wetterstation mit einem ESP32-C3 gebaut. Sie misst Temperatur und Luftfeuchtigkeit mit einem DHT11-Sensor. Die Daten werden über WLAN auf einer Webseite angezeigt. Auf dieser Webseite kann man auch eine Farbe auswählen, die dann an eine RGB-LED geschickt wird. Wird es zu heiß, schaltet sich automatisch ein kleiner Lüfter ein.
+
+Während dem Projekt sind ein paar Probleme aufgetreten. Es war am Anfang schwer, den richtigen Code zu finden, der mit dem Sensor und dem ESP32 zusammen funktioniert. Auch das Hochladen des Codes auf den ESP32 hat manchmal nicht geklappt, weil der Port nicht erkannt wurde. Die Verbindung zur Webseite war anfangs auch instabil – manchmal hat sich der ESP32 einfach nicht verbunden. Zusätzlich war das Farbsystem (RGB) am Anfang verwirrend, weil die falsche Farbe angezeigt wurde. Auch kleinere Fehler wie vergessene Semikolons oder fehlende Bibliotheken im Code haben Zeit gekostet.
+
+Trotz allem hat das Projekt am Ende gut funktioniert, und alle wichtigen Funktionen haben geklappt.
+
+
+## 6. Quellen
+
+[1] ChatGPT. ChatGPT. Available at: https://chatgpt.com/ (Accessed: 20 May 2025).
+
+[2] Random Nerd Tutorials. (No date) ESP32 Web Server Tutorial. Available at: https://randomnerdtutorials.com/esp32-web-server-arduino-ide/ (Accessed: 20 May 2025).
+
+[3] Arduino. (No date) DHT11 Temperature Sensor Tutorial. Available at: https://arduinogetstarted.com/tutorials/arduino-dht11 (Accessed: 20 May 2025).
+
+[4] ESPressif. (No date) ESP32-C3 DevKitM-1 User Guide. Available at: https://docs.espressif.com/projects/esp-idf/en/v5.2/esp32c3/hw-reference/esp32c3/user-guide-devkitm-1.html (Accessed: 20 May 2025).
