@@ -272,7 +272,7 @@ void loop() {
 
 ```
 
-## Bilder
+## Bilder und Schaltung
 
 ![Beschreibung](https://github.com/eguenguer/Wetterstation/blob/Bilder/S2.png)
 ![Beschreibung](https://github.com/eguenguer/Wetterstation/blob/Bilder/S1.jpg)
