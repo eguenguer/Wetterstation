@@ -272,6 +272,11 @@ void loop() {
 
 ```
 
+## Bilder
+
+![Beschreibung]("C:\Users\elyes\Downloads\S1.jpg")
+
+
 ## Tabelle
 
 | Nr. | Komponente             | Beschreibung                                                              |
