@@ -275,7 +275,12 @@ void loop() {
 ## Bilder
 
 ![Beschreibung](https://github.com/eguenguer/Wetterstation/blob/Bilder/S2.png)
-
+![Beschreibung](https://github.com/eguenguer/Wetterstation/blob/Bilder/S1.jpg)
+![Beschreibung](https://github.com/eguenguer/Wetterstation/blob/Bilder/S3.png)
+![Beschreibung](https://github.com/eguenguer/Wetterstation/blob/Bilder/Schaltplan1.png)
+![Beschreibung](https://github.com/eguenguer/Wetterstation/blob/Bilder/Webinterface1.png)
+![Beschreibung](https://github.com/eguenguer/Wetterstation/blob/Bilder/Webinterface2.png)
+![Beschreibung](https://github.com/eguenguer/Wetterstation/blob/Bilder/Webinterface3.png)
 
 ## Tabelle
 
