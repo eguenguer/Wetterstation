@@ -272,11 +272,6 @@ void loop() {
 
 ```
 
-## Bilder
-
-![Schaltung1]("C:\Users\elyes\Downloads\Schaltung1.jpg")
-
-
 ## Tabelle
 
 | Nr. | Komponente             | Beschreibung                                                              |
