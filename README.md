@@ -394,3 +394,14 @@ void loop() {
     }
   }
 }
+```
+
+### Tabelle
+
+| Zeitpunkt  | Temperatur (°C) | Luftfeuchtigkeit (%) | Lüfter an? | LED-Farbe (Hex) |
+|------------|------------------|------------------------|-------------|------------------|
+| 12:00 Uhr  | 24.5             | 60                     | Nein        | #00FF00 (Grün)   |
+| 12:05 Uhr  | 25.3             | 58                     | Nein        | #00FF00 (Grün)   |
+| 12:10 Uhr  | 27.8             | 55                     | Ja          | #FF0000 (Rot)    |
+| 12:15 Uhr  | 26.0             | 57                     | Nein        | #0000FF (Blau)   |
+
