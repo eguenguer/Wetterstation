@@ -274,7 +274,7 @@ void loop() {
 
 ## Bilder
 
-![Beschreibung](Bilder/S2.png)
+![Beschreibung](https://github.com/eguenguer/Wetterstation/blob/Bilder/S2.png)
 
 
 ## Tabelle
